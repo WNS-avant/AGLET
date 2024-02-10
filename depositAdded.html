@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="5;url=/map-index">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png" type="image/x-icon">
+<title>deposit-added</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&family=Spline+Sans+Mono:ital,wght@1,300&display=swap');
+</style>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9; /* Light gray background */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        color: #4CAF50; /* Green color for the heading */
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-family: "Spline Sans Mono", monospace;
+    }
+
+    p {
+        color: #333; /* Dark gray color for the paragraph */
+        font-size: 18px;
+        line-height: 1.6; /* Increased line height for better readability */
+        margin-bottom: 30px;
+        font-family: "Piazzolla", serif;  
+    }
+
+    span {
+        color: #E91E63; /* Pink color for the dynamic values */
+        font-weight: bold;
+    }
+
+    p:last-child {
+        font-style: italic;
+        color: #666; /* Gray color for the last paragraph */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Deposit Added</h1>
+    <p>Deposited <span th:text="${amount}"></span> successfully to the account of user <span th:text="${roll}"></span>.</p>
+    <p>You will be redirected to the Orders page in 5 seconds.</p>
+</div>
+</body>
+</html>

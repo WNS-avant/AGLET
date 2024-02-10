@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+</style>
+<meta charset="UTF-8">
+<link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add-Student</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	border: 4px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image: url('https://i.ibb.co/fN7XTmn/1.png');
+	backdrop-filter:blur(2px);
+	border: 5px solid gold;
+	
+}
+
+.container {
+	width: 320px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+	outline: 2px #ff0000;
+	outline-style: double;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	max-width:500px;
+	
+}
+
+label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-family: "Abel", sans-serif;
+}
+
+input[type="text"], input[type="number"], input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	transition: border-color 0.3s;
+	font-family: "Bree Serif", serif;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+	border-color: #5c88da;
+	outline: none;
+}
+
+input[type="submit"] {
+	background-color: #5c88da;
+	color: white;
+	cursor: pointer;
+	font-family:"Abel", sans-serif;
+	font-family: "Bree Serif", serif;
+}
+
+input[type="submit"]:hover {
+	background-color: #3d68b7;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input[type="number"]:read-only {
+	background-color: #f4f4f4;
+	cursor: not-allowed;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <form action="/success" method="post">
+        <label for="roll">Roll Number:</label>
+        <input type="text" id="roll" name="roll" onchange="setYear()" required/><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required/><br>
+        <label for="year">Year of Joining:</label>
+        <input type="number" id="year" name="year" readonly required/><br>
+        <label for="amount">Amount Deposited:</label>
+        <input type="number" id="amount" name="amount" required/><br>
+        <input type="submit" value="ADD STUDENT"/>
+    </form>
+</div>
+
+<script>
+function setYear() {
+    var rollInput = document.getElementById('roll');
+    var yearInput = document.getElementById('year');
+    var roll = rollInput.value;
+    var firstTwoDigits = roll.substring(0, 2);
+    var year = 2000 + parseInt(firstTwoDigits);
+    yearInput.value = year;
+}
+</script>
+
+</body>
+</html>

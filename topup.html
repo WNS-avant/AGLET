@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <meta charset="UTF-8">
+    <title>Low Balance</title>
+    <style>
+        body {
+            font-family: "Audiowide", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,h3 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: "Trirong", serif;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .back-link a {
+            color: #3498db; /* Blue color */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-link a:hover {
+            color: #2980b9;
+        }
+        .back-arrow {
+            margin-right: 5px;
+        }
+        .scenario-images {
+        margin-bottom: 20px;
+    }
+
+    .scenario-images img {
+        max-width: 100%; 
+        height: auto; 
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="scenario-images">
+        <img src="https://i.ibb.co/cvH2yN4/insufficient-removebg-preview.png" alt="Scenario Image 1">
+    </div>
+    <h1 style="color: orange;">-Insufficient Balance-</h1>
+    <h3><span>It seems that you current balance is inadequate to place an order !</span></h3>
+    <button onclick="window.location.href='/map-topup'">New Deposit</button>
+    <div class="back-link">
+        <a href="/map-index"><span class="back-arrow">&larr;</span> Back to Orders</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <meta charset="UTF-8">
+    <title>Balance - Nil</title>
+    <style>
+        body {
+            font-family: "Audiowide", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+            animation: pulse 2s infinite alternate;
+        }
+
+        h2,h4 {
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #3498db; /* Blue color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: "Trirong", serif;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .back-link {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #3498db; /* Blue color */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-link a:hover {
+            color: #2980b9;
+        }
+
+        .back-arrow {
+            margin-right: 5px;
+        }
+          .scenario-images {
+        margin-bottom: 20px;
+    }
+
+    .scenario-images img {
+        max-width: 100%; /* Set maximum width to 100% of container */
+        height: auto; /* Maintain aspect ratio */
+    }
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="scenario-images">
+        <img src="https://i.ibb.co/60LFvjW/nil.png" alt="Scenario Image 1">
+    </div>
+    <h1>:. Balance - Nil .:</h1>
+    <h2><span>Your have no balance</span></h2>
+    <h4>- order cannot be placed -</h4>
+    <button onclick="window.location.href='/map-topup'">New Deposit</button>
+    <div class="back-link">
+        <a href="/map-index"><span class="back-arrow">&#8592;</span> Back to Orders</a>
+    </div>
+</div>
+</body>
+</html>

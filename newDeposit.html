@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png" type="image/x-icon">
+    
+    <title>new-deposit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image:url('https://i.ibb.co/f9kjw8g/new-Deposit.jpg" alt="new-Deposit" border="2"');
+            background-size: cover;
+            background-position: right;         
+            border: 5px solid gold;
+        }
+
+        .container {
+            width:300px;
+            height:300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 4px solid;
+            border-image: linear-gradient(to right, gold, purple);
+            border-image-slice: 1;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+           
+        }
+
+        form {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           padding: 20px;
+          
+         
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            backdrop-filter: blur(150px);
+            z-index:-50;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: "Playfair Display", sans-serif;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            font-family: "Playfair Display", sans-serif;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"] + label {
+            position: relative;
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid #ccc;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            font-family: Playfair Display;
+            box-sizing: border-box;
+            margin: auto;
+            width: calc(100% - 10px);
+        }
+     
+        
+
+        input[type="radio"][value="Faculty"]:checked + label {
+            background-color: #800080;
+            color: white;
+        }
+
+        input[type="radio"][value="Student"]:checked + label {
+            background-color: #fff550;
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+	input[type="radio"]:hover + label {
+    animation: pulse 0.5s infinite ease-in-out;
+    border-color: #4CAF50;
+    color: #66ff66; 
+	}
+
+    </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+    <form action="/add-deposit" method="post" onSubmit="validateForm()">
+        <div class="radio-group">
+            <input type="radio" name="user" value="Student" id="studentRadio" required>
+            <label for="studentRadio">Student</label>
+
+            <input type="radio" name="user" value="Faculty" id="facultyRadio" required>
+            <label for="facultyRadio">Faculty</label>
+        </div>
+
+        <input type="text" name="roll" placeholder="Roll" required><br>
+        <input type="number" name="amount" placeholder="Amount" required><br>
+        <input type="submit" value="DEPOSIT" onkeydown="searchOnEnter(event)">
+    </form>
+</div>
+
+<script>
+function searchOnEnter(event) {
+    if (event.key === 'Enter') {
+        search();
+    }
+}
+
+function validateForm() {
+    var selectedOption = document.querySelector('input[name="user"]:checked'); 
+    if (!selectedOption) {
+        alert('Please select the type of user.');
+        return false; 
+    }
+    return true; 
+
+}
+</script>
+</body>
+</html>

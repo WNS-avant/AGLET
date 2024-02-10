@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+</style>
+<meta charset="UTF-8">
+<link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png"
+	type="image/x-icon">
+<title>Add-Faculty</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	border: 4px;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image:url('https://i.ibb.co/2KFPnbQ/2.png');
+	backdrop-filter: blur(2px);
+	border: 5px solid gold;
+}
+
+.container {
+	width: 320px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+	outline: 2px #ff0000;
+	outline-style: double;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	max-width:500px;
+}
+
+label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-family: "Abel", sans-serif;
+}
+
+input[type="text"], input[type="number"], input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	transition: border-color 0.3s;
+	font-family: "Bree Serif", serif;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+	border-color: #5c88da;
+	outline: none;
+}
+
+input[type="submit"] {
+	background-color: #5c88da;
+	color: white;
+	cursor: pointer;
+	font-family:"Abel", sans-serif;
+	font-family: "Bree Serif", serif;
+}
+
+input[type="submit"]:hover {
+	background-color: #3d68b7;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input[type="number"]:read-only {
+	background-color: #f4f4f4;
+	cursor: not-allowed;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<form action="/facsuccess" method="post">
+			<label>ID Number :</label> <input type="text" name="roll" required /><br></br>
+			<label>Name :</label> <input type="text" name="name" required /><br></br>
+			<label>Year of joining :</label> <input type="number" name="year"
+				required /><br></br> <label>Amount deposited :</label> <input
+				type="number" name="amount" required /><br></br> <input
+				type="submit" value="ADD FACULTY" />
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://i.postimg.cc/hj5pR8wy/aglet-monogram.png" type="image/x-icon">
+<title>User Deleted</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image:url('https://i.ibb.co/SVvWH4k/deluserbg.jpg');
+        backdrop-filter: blur(2px);
+    }
+
+    .container {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border: 2px solid #3498db; /* Blue border */
+    }
+
+    h1 {
+        color: #e74c3c;
+       
+        font-size: 50px; /* Increased font size */
+        text-shadow: 
+            -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+
+    p {
+        color: #333;
+        margin: 10px 0;
+    }
+
+    .back-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .back-link a {
+        color: #3498db; /* Blue color */
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        margin: 0 10px;
+        border: 2px solid #3498db; /* Blue border */
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+
+    .back-link a:hover {
+        background-color: #3498db; /* Blue color on hover */
+        color: #fff; /* White text on hover */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>User Deleted</h1>
+    <p>User: <span th:text="${deletedUserType}" style="font-weight: bold;"></span></p>
+    <p>Name: <span th:text="${deletedUserName}" style="font-weight: bold;"></span></p>
+    <p>Roll: <span th:text="${deletedUserRoll}" style="font-weight: bold;"></span></p>
+    <div class="back-link">
+        <a href="/map-display">Back to User List</a>
+        <a href="/map-index">Go back to Orders</a>
+    </div>
+</div>
+</body>
+</html>
