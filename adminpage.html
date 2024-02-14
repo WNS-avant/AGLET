@@ -209,12 +209,14 @@ table tr:first-child {
         var cells = document.querySelectorAll('table td');
 
         cells.forEach(function(cell) {
-            var cellText = cell.textContent;
-            var highlightedText = cellText.replace(new RegExp('<span class="highlight">', 'gi'), '').replace(new RegExp('</span>', 'gi'), '');
-            if (cellText.toLowerCase().includes(searchText.toLowerCase())) {
-                highlightedText = highlightedText.replace(new RegExp(searchText, 'gi'), '<span class="highlight">$&</span>');
+            if (!cell.querySelector('.delete-form')) {
+                var cellText = cell.textContent;
+                var highlightedText = cellText.replace(new RegExp('<span class="highlight">', 'gi'), '').replace(new RegExp('</span>', 'gi'), '');
+                if (cellText.toLowerCase().includes(searchText.toLowerCase())) {
+                    highlightedText = highlightedText.replace(new RegExp(searchText, 'gi'), '<span class="highlight">$&</span>');
+                }
+                cell.innerHTML = highlightedText;
             }
-            cell.innerHTML = highlightedText;
         });
     }
 </script>
